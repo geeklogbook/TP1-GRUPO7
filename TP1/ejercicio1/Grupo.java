@@ -81,7 +81,7 @@ public class Grupo {
 	}
 	
 	private void mostrarIntegrantes() {	
-		System.out.println("Cantidad de integrantes:" + this.integrantes.size() + "\n Nombres:");
+		System.out.println("Cantidad de integrantes:" + this.integrantes.size() + "\nNombres:");
 		for(String integrante : integrantes) {
 			System.out.println(integrante);
 		}

@@ -13,6 +13,14 @@ public class Test {
 		grupo1.agregarIntegrante("Juan Manuel");
 		grupo1.agregarIntegrante("Franco");
 		
+		grupo1.mostrar();
+	
+		grupo1.removerIntegrante("Franco");
+		grupo1.mostrar();
+		
+		grupo1.vaciar();
+		grupo1.mostrar();
+
 
 	}
 	
