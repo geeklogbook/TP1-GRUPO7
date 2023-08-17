@@ -8,11 +8,13 @@ public class test {
 		
 
 		System.out.println("AGREGAR INTEGRANTES");
-		grupo_a.agregarIntegrantes("Juan");
-		grupo_a.agregarIntegrantes("Pedro");
-		grupo_a.agregarIntegrantes("Jose"); // Repetido -> no se agrega
-		grupo_a.agregarIntegrantes("Jose");
+		grupo_a.agregarIntegrantes("Federico ");
+		grupo_a.agregarIntegrantes("Joaquín Chemile");
+		grupo_a.agregarIntegrantes("Lucina Nigro"); 
+		grupo_a.agregarIntegrantes("Lucina Nigro"); // Repetido -> no se agrega
 		grupo_a.agregarIntegrantes("Integrante Ficticio");
+		grupo_a.agregarIntegrantes("Juan Manuel");
+		grupo_a.agregarIntegrantes("Valentín");
 		grupo_a.mostrar();
 		
 		// REMOVER INTEGRANTE FICTICIO:
@@ -25,3 +27,4 @@ public class test {
 		grupo_a.mostrar();
 	}
 }
+

@@ -31,7 +31,13 @@ public class Grupo {
 	}
 	
 	private int obtenerPosicionIntegrante(String nombreIntegrante) {
-		return this.integrantes.indexOf(nombreIntegrante);
+		int posicionIntegrante = -1;
+		
+		if (this.integrantes.indexOf(nombreIntegrante) > -1) {
+			posicionIntegrante = this.integrantes.indexOf(nombreIntegrante) ;
+		}
+		
+		return posicionIntegrante;
 	}
 	
 	public String obtenerIntegrante(int posicion){

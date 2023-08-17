@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Competencia {
 	String nombreEspecialidad;
 	ArrayList<Competidor> competidores; // Cada Elemento es el nombre del integrante
-	// Agregar posicion
 	
 	public Competencia(String nombreEspecialidad) {
 		this.nombreEspecialidad = nombreEspecialidad;
@@ -36,52 +35,49 @@ public class Competencia {
 	}
 	
 	// Ejercicio 3 - Retorna una terna de 3 tiempos y los competitodes con los mismos
-	// TODO: Clase posicion que implemente un array list de atletas donde agrege los atletas 
-	// con la posicion. IDEA:
-	//		ArrayList<Posicion> terna = new ArrayList<Posicion>();
-	//		Posicion p1 = new Posicion();
-	//		Posicion p2 = new Posicion();
-	//		Posicion p3 = new Posicion();
-
 	public ArrayList<Competidor> ternaGanadores(){
 		//GANADORES
 		ArrayList<Competidor> ganadores =  new ArrayList<Competidor>();
-		ArrayList<Competidor> terna = new ArrayList<Competidor>();
 		//TIEMPO GANADOR
 		double tiempoPrimero = Integer.MAX_VALUE; // 
 		double tiempoSegundo = Integer.MAX_VALUE; // tiempoPrimero < tiempoSegundo < tiempoTercero
 		double tiempoTercero = Integer.MAX_VALUE; // 
+		Posicion primero = null;
+		Posicion segundo = null;
+		Posicion tercero = null;
 
 		
 		for (Competidor competidor: this.competidores) {
 			double tiempoCompetidor = competidor.getSegundos();
-
-//			if(tiempoCompetidor < tiempoPrimero) {
-//				tiempoPrimero = tiempoCompetidor;
-//				tiempoSegundo = tiempoPrimero;
-//				tiempoTercero = tiempoSegundo;
-//				
-//			} else if (tiempoCompetidor > tiempoPrimero && tiempoCompetidor < tiempoSegundo) {
-//				tiempoSegundo = tiempoCompetidor;
-//				tiempoTercero = tiempoSegundo;
-//			} else if (tiempoCompetidor > tiempoSegundo && tiempoCompetidor < tiempoTercero) {
-//				tiempoTercero = tiempoCompetidor;
-//			}		
-//			if(tiempoCompetidor  < tiempoPrimero) {
-//				this.competidores.remove(competidor);
-//				terna.add(competidor);
-//				tiempoPrimero = tiempoCompetidor;
-//			} else if (tiempoCompetidor > tiempoPrimero && tiempoCompetidor < tiempoSegundo){
-//				tiempoSegundo = tiempoCompetidor;				
-//			}
+			
+			if (tiempoCompetidor < tiempoPrimero) {
+				segundo = primero;
+				tiempoSegundo = tiempoPrimero;
+				//
+				primero = new Posicion(competidor);
+				tiempoPrimero = tiempoCompetidor;				
+			} else {
+				if (tiempoCompetidor < tiempoSegundo) {
+					tercero = segundo;
+					tiempoTercero = tiempoSegundo;
+					//
+					segundo = new Posicion(competidor);
+					tiempoSegundo = tiempoCompetidor;
+				} else {
+					if (tiempoCompetidor < tiempoTercero) {
+						tercero = new Posicion(competidor);
+						tiempoTercero = tiempoCompetidor;
+					}
+				}
+			}
 		}
 		
-		// recorro competidores y me quedo con los tres tiempos
-		// Vuelvo a recorrer la lista y agrego ganadores
-		// Ordeno la lista por el tiempo
-		
+		ganadores.add(primero.getCompetidor());
+		ganadores.add(segundo.getCompetidor());
+		ganadores.add(tercero.getCompetidor());
 		return ganadores;
 	}
+	
 	
 	
 	public void mostrarGanadores() {

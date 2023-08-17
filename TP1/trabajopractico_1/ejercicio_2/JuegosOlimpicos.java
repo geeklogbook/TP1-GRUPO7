@@ -16,6 +16,7 @@ public class JuegosOlimpicos {
 		Competidor competidor_7 = new Competidor("Laura", 9.5);
 		Competidor competidor_8 = new Competidor("Ramon", 9.2);
 		Competidor competidor_9 = new Competidor("Maria", 9.4);
+		Competidor competidor_10 = new Competidor("Mirko", 9);
 		
 		atletismo.addCompetidor(competidor_1);
 		atletismo.addCompetidor(competidor_2);
@@ -26,6 +27,7 @@ public class JuegosOlimpicos {
 		atletismo.addCompetidor(competidor_7);
 		atletismo.addCompetidor(competidor_8);
 		atletismo.addCompetidor(competidor_9);
+		atletismo.addCompetidor(competidor_10);
 		
 		atletismo.mostrarGanadores();
 		atletismo.mostrarTernaGanadores();
