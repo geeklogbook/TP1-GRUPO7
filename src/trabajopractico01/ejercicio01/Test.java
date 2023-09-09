@@ -1,6 +1,6 @@
-package trabajopractico_1.ejercicio_1;
+package trabajopractico01.ejercicio01;
 
-public class test {
+public class Test {
 
 	public static void main(String[] args) {
 		System.out.println("Inicio ejercicio 1");

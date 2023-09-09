@@ -1,4 +1,4 @@
-package trabajopractico_1.ejercicio_1;
+package trabajopractico01.ejercicio01;
 
 import java.util.ArrayList;
 

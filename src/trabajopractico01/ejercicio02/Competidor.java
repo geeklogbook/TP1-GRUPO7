@@ -1,4 +1,4 @@
-package trabajopractico_1.ejercicio_2;
+package trabajopractico01.ejercicio02;
 
 public class Competidor {
 	String nombreCompetidor;
